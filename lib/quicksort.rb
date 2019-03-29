@@ -4,11 +4,15 @@ class QuickSort
   def self.sort(unsorted)
     return unsorted if unsorted.length.zero?
 
+    left = empty
+    right = unsorted[1..-1]
+
     if unsorted.length > 1 && unsorted[0] > unsorted[1]
-      return [unsorted[1], unsorted[0]] + unsorted[2..-1]
+      left = [unsorted[1]]
+      right = unsorted[2..-1]
     end
 
-    [unsorted[0]] + sort(unsorted[1..-1])
+    left + [unsorted[0]] + sort(right)
   end
 
   def self.empty
