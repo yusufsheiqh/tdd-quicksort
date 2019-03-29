@@ -1,9 +1,9 @@
+# frozen_string_literal: true
+
 class QuickSort
   def self.sort(unsorted)
-    empty
+    unsorted
   end
-
-  private
 
   def self.empty
     []
