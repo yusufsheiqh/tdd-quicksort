@@ -5,19 +5,25 @@ class QuickSort
     return unsorted if unsorted.length.zero?
 
     left = empty
-    right = unsorted[1..-1]
+    right = empty
 
-    if unsorted.length > 1 && unsorted[0] > unsorted[1]
-      left = [unsorted[1]]
-      right = unsorted[2..-1]
+    if unsorted.length > 1
+      if unsorted[0] > unsorted[1]
+        left << unsorted[1]
+      else
+        right << unsorted[1]
+      end
     end
 
-    if unsorted.length > 2 && unsorted[0] > unsorted[2]
-      left = [unsorted[2]]
-      right = [unsorted[1]]
+    if unsorted.length > 2
+      if unsorted[0] > unsorted[2]
+        left << unsorted[2]
+      else
+        right << unsorted[2]
+      end
     end
 
-    left + [unsorted[0]] + sort(right)
+    sort(left) + [unsorted[0]] + sort(right)
   end
 
   def self.empty
