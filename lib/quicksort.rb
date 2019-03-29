@@ -7,19 +7,11 @@ class QuickSort
     left = empty
     right = empty
 
-    if unsorted.length > 1
-      if unsorted[0] > unsorted[1]
-        left << unsorted[1]
+    unsorted[1..-1].each do |n|
+      if unsorted[0] > n
+        left << n
       else
-        right << unsorted[1]
-      end
-    end
-
-    if unsorted.length > 2
-      if unsorted[0] > unsorted[2]
-        left << unsorted[2]
-      else
-        right << unsorted[2]
+        right << n
       end
     end
 
