@@ -12,6 +12,11 @@ class QuickSort
       right = unsorted[2..-1]
     end
 
+    if unsorted.length > 2 && unsorted[0] > unsorted[2]
+      left = [unsorted[2]]
+      right = [unsorted[1]]
+    end
+
     left + [unsorted[0]] + sort(right)
   end
 

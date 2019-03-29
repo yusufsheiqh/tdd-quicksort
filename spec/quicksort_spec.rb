@@ -15,6 +15,7 @@ describe QuickSort do
     expect(QuickSort.sort([1, 2, 3])).to eq([1, 2, 3])
     expect(QuickSort.sort([2, 1, 3])).to eq([1, 2, 3])
     expect(QuickSort.sort([1, 3, 2])).to eq([1, 2, 3])
+    expect(QuickSort.sort([2, 3, 1])).to eq([1, 2, 3])
   end
 
   it 'does not modify original array' do
